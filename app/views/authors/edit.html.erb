@@ -1,8 +1,8 @@
-<h1>New Author</h1>
-
-<%= form_with scope: :author, url: authors_path, local: true do |form| %>
-
- <% if @author.errors.any? %>
+<h1>Edit author</h1>
+ 
+<%= form_with(model: @author, local: true) do |form| %>
+ 
+  <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@author.errors.count, "error") %> prohibited
@@ -15,8 +15,7 @@
       </ul>
     </div>
   <% end %>
-
-
+ 
   <p>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
@@ -26,16 +25,16 @@
     <%= form.label :last_name %><br>
     <%= form.text_field :last_name %>
   </p>
-
-   <p>
+  
+  <p>
     <%= form.label :homepage %><br>
     <%= form.text_field :homepage %>
   </p>
-
+ 
   <p>
     <%= form.submit %>
   </p>
-
-  <p>
-    <%= link_to 'Cancel', authors_path %>
+ 
 <% end %>
+ 
+<%= link_to 'Back', authors_path %>
