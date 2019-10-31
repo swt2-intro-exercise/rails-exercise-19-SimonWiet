@@ -18,8 +18,8 @@
 <p>
   <strong>Authors:</strong>
   <% if @paper.authors.any? %>
-    <% @paper.authors.name.each do |msg| %>
-          msg
+    <% @paper.authors.each do |author| %>
+          <%= author.name %>
      <% end %>
   <% else %>
     -
