@@ -22,7 +22,6 @@ class PapersController < ApplicationController
   # POST /papers
   def create
     @paper = Paper.new(paper_params)
-    @paper.authors << Author.find(1)
     if @paper.save
       redirect_to @paper, notice: 'Paper was successfully created.'
     else
